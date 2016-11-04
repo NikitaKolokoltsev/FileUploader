@@ -1,0 +1,21 @@
+.jumbotron
+  h2
+    | LOG IN
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+
+    .input-field
+      = f.email_field :email, autocomplete: "off", id: "inputEmail"
+      = f.label "Email", for: "inputEmail"
+
+    .input-field
+      = f.password_field :password, autocomplete: "off", id: "inputPassword"
+      = f.label "Password", for: "inputPassword"
+      
+    - if devise_mapping.rememberable?
+      .field
+        = f.check_box :remember_me, class: "filled-in"
+        = f.label :remember_me
+
+    .actions
+      = f.submit "Log in", class: "btn btn-primary", style: "font-weight: bold; margin-right: 20px"
+      = link_to "Sign up", new_user_registration_path, style: "font-weight: bold"

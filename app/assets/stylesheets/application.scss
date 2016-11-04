@@ -1,0 +1,77 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require style
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "materialize";
+
+body {
+  height: 100vh;
+  position: relative;
+  min-height: 320px;
+}
+
+label {
+  font-size: 1rem;
+}
+
+.actions {
+  margin-top: 20px;
+
+}
+
+.field {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.jumbotron {
+  margin-top: 15px;
+  position: absolute;
+  width: 40%;
+  top: 50%;
+  left: 35%;
+  transform: translate(-15%, -53%);
+  min-width: 175px;
+}
+
+@media screen and (max-width: 500px) {
+  .jumbotron {
+  	width: 100%;
+    left: 15%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .jumbotron {
+    height: 100%;
+    top: 0;
+    transform: translate(-15%, 5%);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-height: 410px) and (max-width: 205px) {
+  .jumbotron {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(0%);
+    text-align: center;
+  }
+}

@@ -1,0 +1,29 @@
+.jumbotron
+  h2
+    | SIGN UP
+  = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+
+    .input-field
+      = f.text_field :first_name, autocomplete: "off", id: "inputFirstName"
+      = f.label "First Name", for: "inputFirstName"
+
+    .input-field
+      = f.text_field :last_name, autocomplete: "off", id: "inputLastName"
+      = f.label "Last Name", for: "inputLastName"
+
+    .input-field
+      = f.email_field :email, autocomplete: "off", id: "inputEmail"
+      = f.label "Email", for: "inputEmail"
+
+    .input-field
+      = f.password_field :password, autocomplete: "off", id: "inputPassword"
+      = f.label "Password", for: "inputPassword"
+
+    .input-field
+      = f.password_field :password_confirmation, autocomplete: "off", id: "inputPasswordConfirmation"
+      = f.label "Password Confirmation", for: "inputPasswordConfirmation"
+
+    .actions
+      = f.submit "Sign up", class: "btn btn-primary", style: "font-weight: bold; margin-right: 20px;"
+      = link_to "Log in", new_user_session_path, style: "font-weight: bold;"
