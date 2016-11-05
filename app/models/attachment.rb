@@ -6,4 +6,6 @@ class Attachment
 
   has_mongoid_attached_file :attachment
   do_not_validate_attachment_file_type :attachment
+
+  validates_presence_of :attachment
 end

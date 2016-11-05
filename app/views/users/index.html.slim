@@ -6,6 +6,11 @@
       | Not you? 
       = link_to "Log out", destroy_user_session_path, method: :delete
 
+    - if @errors
+      - @errors.each do |e|
+        = e
+
+
     = simple_form_for([@user, Attachment.new]) do |f|
       .file-form
         .file-field.input-field
@@ -31,15 +36,16 @@
           th.right
             | Download
       tbody
-        - @attachments.each do |a|
-          tr
-            td
-              = a.user.first_name + " "
-              = a.user.last_name
-            td.truncate
-              = a.attachment_file_name
-            td
-              = link_to "Download", a.attachment.url(:original, false), class: "right"  
+        - if @attachments
+          - @attachments.each do |a|
+            tr
+              td
+                = a.user.first_name + " "
+                = a.user.last_name
+              td.truncate
+                = a.attachment_file_name
+              td
+                = link_to "Download", a.attachment.url(:original, false), class: "right"  
 
 - else
 
