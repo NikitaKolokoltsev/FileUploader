@@ -1,10 +1,20 @@
 production:
   clients:
-    username: NikitaKolokoltsev
-    password: Gracias1
+    default:
+      hosts:
+        - ds029675.mlab.com:29675
+      database: simple_file_uploader_database
+      username: NikitaKolokoltsev
+      password: Gracias1
+
   sessions:
     default:
       uri: mongodb://NikitaKolokoltsev:Gracias1@ds029675.mlab.com:29675/simple_file_uploader_database
+      hosts:
+        - ds029675.mlab.com:29675
+      database: simple_file_uploader_database
+      username: NikitaKolokoltsev
+      password: Gracias1
       options:
         max_retries_on_connection_failure: 20
         persist_in_safe_mode: true
