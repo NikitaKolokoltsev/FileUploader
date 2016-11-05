@@ -1,4 +1,7 @@
 production:
+  clients:
+    username: NikitaKolokoltsev
+    password: Gracias1
   sessions:
     default:
       uri: mongodb://NikitaKolokoltsev:Gracias1@ds029675.mlab.com:29675/simple_file_uploader_database
@@ -15,8 +18,6 @@ development:
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
       database: file_uploader_development
-      username: NikitaKolokoltsev
-      password: Gracias1
       # Provides the hosts the default client can connect to. Must be an array
       # of host:port pairs. (required)
       hosts:
