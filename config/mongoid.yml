@@ -15,6 +15,7 @@ development:
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
       database: file_uploader_development
+      userna
       # Provides the hosts the default client can connect to. Must be an array
       # of host:port pairs. (required)
       hosts:
@@ -33,10 +34,10 @@ development:
         #     - use: web
 
         # The name of the user for authentication.
-        # user: 'user'
+        user: 'NikitaKolokoltsev'
 
         # The password of the user for authentication.
-        # password: 'password'
+        password: 'Gracias1'
 
         # The user's database roles.
         # roles:
