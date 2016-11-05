@@ -31,7 +31,7 @@
           th.right
             | Download
       tbody
-        - @user.attachments.reverse.each do |a|
+        - @attachments.each do |a|
           tr
             td
               = a.user.first_name + " "

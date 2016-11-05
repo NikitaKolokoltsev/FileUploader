@@ -1,9 +1,7 @@
 class User
   include Mongoid::Document
 
-  embeds_many :attachments, cascade_callbacks: true
-  accepts_nested_attributes_for :attachments, allow_destroy: true
-  attr_accessor :attachments_attributes
+  has_many :attachments
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

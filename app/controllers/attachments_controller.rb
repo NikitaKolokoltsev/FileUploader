@@ -2,7 +2,7 @@ class AttachmentsController < ApplicationController
 
 	def create
 		@user = User.find(params[:user_id])
-		@attachment = @user.attachments.create!(file_params.merge(user: @user))
+		@attachment = @user.attachments.create!(file_params)
 		redirect_to root_path
 	end
 
