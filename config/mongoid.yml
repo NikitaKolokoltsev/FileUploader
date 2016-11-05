@@ -1,9 +1,7 @@
-ENV['MONGODB_URL'] = mongodb://NikitaKolokoltsev:Gracias1@ds029675.mlab.com:29675/simple_file_uploader_database
-
 production:
   sessions:
     default:
-      uri: <%= ENV['MONGODB_URL'] %>
+      uri: mongodb://NikitaKolokoltsev:Gracias1@ds029675.mlab.com:29675/simple_file_uploader_database
       options:
         max_retries_on_connection_failure: 20
         persist_in_safe_mode: true
