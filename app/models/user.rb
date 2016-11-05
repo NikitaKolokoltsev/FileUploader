@@ -1,5 +1,10 @@
 class User
   include Mongoid::Document
+
+  embeds_many :attachments, cascade_callbacks: true
+  accepts_nested_attributes_for :attachments, allow_destroy: true
+  attr_accessor :attachments_attributes
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -37,5 +42,5 @@ class User
   field :first_name,         type: String 
   field :last_name,          type: String
 
-  validates_presence_of :first_name, :last_name
+  validates_presence_of :first_name, :last_name  
 end

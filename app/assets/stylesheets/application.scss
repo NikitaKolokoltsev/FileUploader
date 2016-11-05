@@ -10,7 +10,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require style
  *= require_tree .
  *= require_self
  */
@@ -29,7 +28,32 @@ label {
 
 .actions {
   margin-top: 20px;
+}
 
+.file-field.input-field {
+  width: 80%;
+  flex: 1;
+}
+
+.all-files {
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+
+td {
+  max-width: 435px;
+}
+
+hr {
+  margin-bottom: 20px;
+}
+
+table {
+  margin-bottom: 30px;
+}
+
+.file-form {
+  display: flex;
 }
 
 .field {
@@ -43,8 +67,9 @@ label {
   width: 40%;
   top: 50%;
   left: 35%;
-  transform: translate(-15%, -53%);
+  transform: translate(-12%, -70%);
   min-width: 175px;
+  max-height: 65vh;
 }
 
 @media screen and (max-width: 500px) {
@@ -59,7 +84,7 @@ label {
   .jumbotron {
     height: 100%;
     top: 0;
-    transform: translate(-15%, 5%);
+    transform: translate(-12%, 5%);
     text-align: center;
     margin-bottom: 30px;
   }

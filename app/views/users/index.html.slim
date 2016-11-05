@@ -1,0 +1,52 @@
+- if user_signed_in?
+  .jumbotron
+    h5.center
+      | Hello, 
+      = current_user.first_name + "! "
+      | Not you? 
+      = link_to "Log out", destroy_user_session_path, method: :delete
+
+    = simple_form_for([@user, Attachment.new]) do |f|
+      .file-form
+        .file-field.input-field
+          .btn
+            <span>File</span>
+            = f.file_field :attachment, type: "file"
+          .file-path-wrapper
+            = f.text_field :attachment_file_name, class: "file-path", value: ""
+        = f.submit "LOAD", class: "btn green right", style: "margin-left: 25px; margin-top: 15px; padding-top: 10px; padding-bottom: 10px; height: 54px;"
+    td  
+
+    h4.all-files
+      | All Files
+    hr
+
+    table
+      thead
+        tr
+          th 
+            | File Name
+          th
+            | User
+          th.right
+            | Download
+      tbody
+        - @user.attachments.reverse.each do |a|
+          tr
+            td
+              = a.user.first_name + " "
+              = a.user.last_name
+            td.truncate
+              = a.attachment_file_name
+            td
+              = link_to "Download", a.attachment.url(:original, false), class: "right"  
+
+- else
+
+  .jumbotron.center-align
+    <h1>Hello!</h1>
+    <p>This is a simple file uploader. You need to login or register to use it.</p>
+
+      = link_to "Log In", new_user_session_path, class: "btn", style: "margin-bottom: 10px"
+    br
+      = link_to "Sign Up", new_user_registration_path, class: "btn teal darken-2"

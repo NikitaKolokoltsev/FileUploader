@@ -4,6 +4,8 @@ gem 'devise'
 gem 'slim'
 gem 'simple_form'
 gem 'materialize-sass'
+gem 'mongoid-paperclip'
+gem 'bson_ext'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -18,6 +20,7 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Use mongoDB as database
 gem 'mongoid', git: 'https://github.com/mongodb/mongoid.git'
 
 # Use jquery as the JavaScript library
