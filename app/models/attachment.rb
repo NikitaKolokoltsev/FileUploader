@@ -8,4 +8,5 @@ class Attachment
   validates_presence_of :attachment
 
   field :content_type
+  field :filename
 end
