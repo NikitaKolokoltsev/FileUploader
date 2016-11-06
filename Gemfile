@@ -7,6 +7,7 @@ gem 'materialize-sass'
 gem 'carrierwave-mongoid'
 gem 'carrierwave-dropbox'
 gem 'bson_ext'
+gem 'mime-types'
 
 ruby '2.3.1'
 

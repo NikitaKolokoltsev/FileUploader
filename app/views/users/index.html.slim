@@ -46,7 +46,7 @@
                 span.tooltipped data-position="bottom" data-delay="50" data-tooltip=a.attachment.url
                   = File.basename(a.attachment.path)
               td
-                = link_to "Download", a.attachment.url, class: "right"
+                = link_to "Download", attachment_download_path(a.id), class: "right"
 
 - else
 

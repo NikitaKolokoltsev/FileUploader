@@ -6,4 +6,6 @@ class Attachment
   belongs_to :user, inverse_of: :user
 
   validates_presence_of :attachment
+
+  field :content_type
 end

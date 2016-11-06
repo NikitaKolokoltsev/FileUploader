@@ -1,4 +1,5 @@
 class AttachmentsController < ApplicationController
+	include CarrierWave::Uploader::Download
 	def index
 		@attachments = Attachment.all
 		redirect_to root_path
@@ -7,9 +8,9 @@ class AttachmentsController < ApplicationController
 	def create
 		@user = User.find(params[:user_id])
 		attachment = @user.attachments.new(attachment_params)
-		puts "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-		puts attachment
+		content_type = attachment.attachment.content_type
 		if attachment.save
+			attachment.update!(content_type: content_type)
 			redirect_to root_path
 		else
 			@attachments = Attachment.all
@@ -20,7 +21,8 @@ class AttachmentsController < ApplicationController
 
 	def download
 		attachment = Attachment.find(params[:attachment_id])
-		send_file attachment.attachment.url, filename: attachment.attachment.filename, type: attachment.attachment.content_type
+		file = open(attachment.attachment.url).read
+		send_data file, filename: File.basename(attachment.attachment.path), type: attachment.content_type
 	end
 
 	private
