@@ -44,7 +44,7 @@
                 = a.user.last_name
               td.truncate
                 span.tooltipped data-position="bottom" data-delay="50" data-tooltip=a.attachment.url
-                  = File.basename(a.attachment.file.filename)
+                  = File.basename(a.attachment.filename)
               td
                 = link_to "Download", attachment_download_path(a.id), class: "right"
 
