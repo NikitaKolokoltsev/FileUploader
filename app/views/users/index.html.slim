@@ -16,7 +16,7 @@
         .file-field.input-field
           .btn
             <span>File</span>
-            = f.file_field :attachment, type: "file"
+            = f.file_field :attachment
           .file-path-wrapper
             = f.text_field :attachment_file_name, class: "file-path", value: ""
         = f.submit "LOAD", class: "btn green right", style: "margin-left: 25px; margin-top: 15px; padding-top: 10px; padding-bottom: 10px; height: 54px;"
@@ -30,9 +30,9 @@
       thead
         tr
           th 
-            | File Name
-          th
             | User
+          th
+            | File Name
           th.right
             | Download
       tbody
@@ -43,9 +43,10 @@
                 = a.user.first_name + " "
                 = a.user.last_name
               td.truncate
-                = a.attachment_file_name
+                span.tooltipped data-position="bottom" data-delay="50" data-tooltip=a.attachment.url
+                  = File.basename(a.attachment.path)
               td
-                = link_to "Download", attachment_download_path(a.id)
+                = link_to "Download", a.attachment.url, class: "right"
 
 - else
 
