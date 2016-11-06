@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   resources :users do
   	resources :attachments
   end
+
+  resources :attachments, only: [:download] do
+  	get "/download", to: "attachments#download"
+  end
 end

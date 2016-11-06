@@ -45,7 +45,7 @@
               td.truncate
                 = a.attachment_file_name
               td
-                = link_to "Download", a.attachment.url(:original, false), class: "right"  
+                = link_to "Download", attachment_download_path(a.id)
 
 - else
 
